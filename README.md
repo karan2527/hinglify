@@ -1,38 +1,74 @@
-# Hinglify
 
-Hinglify is a Manifest V3 Chrome extension that converts English text on a webpage into Hinglish without replacing HTML or breaking links, buttons, forms, or scripts.
+# Hinglo
 
-## Current status
+Hinglo is a Chrome Extension that converts English webpage content into Hinglish (Hindi written in Roman script), making web content easier to understand.
 
-The extension uses the documented free API at `https://englishtohinglish.com/api/v1/translate`. It sends one text at a time with mode `en-to-hinglish` and displays the `data.roman` response. The API does not require an API key.
+## Features
 
-## Install
+- Convert English webpage content into Hinglish.
+- Enable or disable translation with a simple toggle.
+- Restore original webpage content anytime.
+- Lightweight and easy to use.
 
-1. Open `chrome://extensions`.
-2. Enable **Developer mode**.
-3. Choose **Load unpacked** and select this folder.
-4. Open `tests/test-page.html` in Chrome (use a local web server if direct file access is restricted).
-5. Click the Hinglify icon and turn on **Convert to Hinglish**.
+## Installation and Setup
 
-## Usage and settings
+### 1. Clone the Repository
 
-The toggle is stored per tab. Turn it off to restore exact original text without reloading. New DOM content is scanned while conversion is enabled. Only sentence-like text and paragraph-sized content are sent to the API; standalone words and short fragments are skipped. The API endpoint is permanently configured; no API key or setup is required. The Settings page provides a real connection test.
+Open your terminal and run:
 
-## Privacy and security
+```bash
+git clone https://github.com/USERNAME/REPOSITORY.git
+```
 
-When translation is enabled, text from converted pages is sent to `englishtohinglish.com`. Password fields, inputs, textareas, code, scripts, and other non-content elements are excluded.
+### 2. Open the Project Folder
 
-## Manual checklist
+```bash
+cd REPOSITORY
+```
 
-- [ ] Extension loads with no manifest errors.
-- [ ] Popup opens and remembers the tab toggle.
-- [ ] Test page headings and paragraphs convert.
-- [ ] Link, button, form controls, code, numbers, URLs, and existing Hindi remain safe.
-- [ ] Turning the toggle off restores original text exactly.
-- [ ] Dynamically added text converts while the toggle is on.
-- [ ] Restricted pages show a friendly unsupported-page status.
-- [ ] Settings can test the permanent API connection.
+### 3. Open Chrome Extensions
 
-## Live API integration
+Navigate to:
 
-The request is `POST https://englishtohinglish.com/api/v1/translate` with JSON `{ "text": "...", "mode": "en-to-hinglish" }`. The free tier allows one string up to 2,000 characters and 30 requests per minute, with full CORS support. The extension retries transient network, server, and rate-limit failures.
+```text
+chrome://extensions/
+```
+
+### 4. Enable Developer Mode
+
+Turn ON the **Developer mode** toggle in the top-right corner.
+
+### 5. Load the Extension
+
+- Click **Load unpacked**.
+- Select the cloned Hinglo project folder.
+- Make sure the selected folder contains `manifest.json`.
+
+### 6. Start Using Hinglo
+
+- Pin Hinglo to your Chrome toolbar.
+- Open any webpage.
+- Click the Hinglo extension icon.
+- Turn ON the translation toggle.
+- Supported English text will be converted into Hinglish.
+
+## Project Structure
+
+```text
+Hinglo/
+├── manifest.json
+├── popup.html
+├── popup.css
+├── popup.js
+├── background.js
+├── content.js
+└── README.md
+```
+
+## API
+
+Hinglo uses the [EnglishToHinglish API](https://englishtohinglish.com/free-api) for translation.
+
+## Contributing
+
+Contributions and suggestions are welcome. Feel free to fork the repository and submit a pull request.
