@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Hinglify test page</title></head><body>
+<h1>Hinglify test page</h1><p>This paragraph should become Hinglish while its <a href="#test">link remains working</a>.</p>
+<p><strong>Bold text</strong> and <span>inline text</span> should be safe.</p><button type="button" onclick="this.textContent='Button clicked'">Click me</button>
+<form><label for="name">Name</label><input id="name" placeholder="Enter your name"><textarea>Do not translate this field.</textarea><select><option>Choose one</option></select></form>
+<pre>const code = "must stay unchanged";</pre><p>यह पहले से हिंदी है। 🎉 12345 https://example.com</p><p id="dynamic">Dynamic content will be added below.</p>
+<script>setTimeout(() => { const p = document.createElement("p"); p.textContent = "This text was loaded dynamically."; document.body.append(p); }, 2000);</script>
+</body></html>

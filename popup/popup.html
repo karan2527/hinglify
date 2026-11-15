@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hinglify</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <main>
+    <header>
+      <div class="brand"><img class="logo" src="../icons/icon128.png" alt="Hinglify logo"><div><h1>Hinglify</h1><p>English → natural Hinglish</p></div></div>
+      <div class="header-actions"><span id="header-status" class="header-status">Idle</span><button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to light mode" title="Switch theme">☀</button></div>
+    </header>
+    <section class="hero">
+      <div><span class="eyebrow">PAGE TRANSLATOR</span><h2>Make this page yours</h2><p>Convert readable English while keeping the page layout intact.</p></div>
+      <label class="toggle-control" for="toggle"><input id="toggle" type="checkbox" role="switch"><span class="switch"></span><span id="toggle-label">Off</span></label>
+    </section>
+    <p id="status" class="sr-only" role="status">Idle</p>
+    <p id="warning" class="warning" hidden>Please wait a few seconds while page text is translated.</p>
+    <button id="settings" class="settings-button" type="button"><span>⚙</span> Settings <span class="arrow">→</span></button>
+    <footer><span>Hinglify v0.1.0</span><span>Secure local controls</span></footer>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

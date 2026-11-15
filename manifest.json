@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Hinglify",
+  "version": "0.1.0",
+  "description": "Convert English webpage text into Hinglish.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://englishtohinglish.com/*"],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Hinglify",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "options/options.html",
+  "commands": {
+    "toggle-hinglify": {
+      "suggested_key": { "default": "Alt+H" },
+      "description": "Toggle Hinglify on the current tab"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
